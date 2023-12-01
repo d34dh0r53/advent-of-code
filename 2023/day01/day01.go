@@ -1,44 +1,57 @@
 package day01
 
 import (
-	"sort"
 	"strings"
-
-	"github.com/d34dh0r53/advent-of-code/2023/utils"
+	"unicode"
 )
 
-type elf struct {
-	calories int
-}
-
 func Part1(input string) int {
-	elves := common(input)
-	return elves[0].calories
+	substrings := strings.Split(input, "\n")
+	sum := 0
+	for _, calibration_value := range substrings {
+		calibration_value = strings.Trim(calibration_value, " ")
+		reversed := Reverse(calibration_value)
+		sum += FindInt(calibration_value, reversed)
+	}
+	return sum
 }
 
-func Part2(input string) int {
-	elves := common(input)
-	return elves[0].calories + elves[1].calories + elves[2].calories
-}
+func FindInt(fwd string, rev string) int {
+	first := 0
+	last := 0
 
-func common(input string) []elf {
-	lines := strings.Split(input, "\n")
-
-	elves := []elf{}
-	e := elf{}
-	for _, line := range lines {
-		if line == "" {
-			elves = append(elves, e)
-			e = elf{}
-		} else {
-			e.calories += utils.MustAtoi(line)
+	// Find first digit
+	for _, f := range fwd {
+		if unicode.IsDigit(f) {
+			first = int(f) - 48
+			break
 		}
 	}
-	elves = append(elves, e)
 
-	sort.Slice(elves, func(i, j int) bool {
-		return elves[i].calories > elves[j].calories
-	})
+	// Find last digit
+	for _, r := range rev {
+		if unicode.IsDigit(r) {
+			last = int(r) - 48
+			break
+		}
+	}
 
-	return elves
+	return first*10 + last
+}
+
+func Reverse(input string) string {
+	n := 0
+	rune := make([]rune, len(input))
+	for _, r := range input {
+		rune[n] = r
+		n++
+	}
+	rune = rune[0:n]
+	// Reverse
+	for i := 0; i < n/2; i++ {
+		rune[i], rune[n-1-i] = rune[n-1-i], rune[i]
+	}
+	// Convert back to UTF-8.
+	output := string(rune)
+	return output
 }

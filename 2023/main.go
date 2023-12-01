@@ -8,120 +8,20 @@ import (
 	"time"
 
 	"github.com/d34dh0r53/advent-of-code/2023/day01"
-	"github.com/d34dh0r53/advent-of-code/2023/day02"
-	"github.com/d34dh0r53/advent-of-code/2023/day03"
-	"github.com/d34dh0r53/advent-of-code/2023/day04"
-	"github.com/d34dh0r53/advent-of-code/2023/day05"
-	"github.com/d34dh0r53/advent-of-code/2023/day06"
-	"github.com/d34dh0r53/advent-of-code/2023/day07"
-	"github.com/d34dh0r53/advent-of-code/2023/day08"
-	"github.com/d34dh0r53/advent-of-code/2023/day09"
-	"github.com/d34dh0r53/advent-of-code/2023/day10"
-	"github.com/d34dh0r53/advent-of-code/2023/day11"
-	"github.com/d34dh0r53/advent-of-code/2023/day12"
-	"github.com/d34dh0r53/advent-of-code/2023/day13"
-	"github.com/d34dh0r53/advent-of-code/2023/day14"
-	"github.com/d34dh0r53/advent-of-code/2023/day15"
-	"github.com/d34dh0r53/advent-of-code/2023/day16"
-	"github.com/d34dh0r53/advent-of-code/2023/day17"
-	"github.com/d34dh0r53/advent-of-code/2023/day18"
-	"github.com/d34dh0r53/advent-of-code/2023/day19"
-	"github.com/d34dh0r53/advent-of-code/2023/day20"
-	"github.com/d34dh0r53/advent-of-code/2023/day21"
-	"github.com/d34dh0r53/advent-of-code/2023/day22"
-	"github.com/d34dh0r53/advent-of-code/2023/day23"
-	"github.com/d34dh0r53/advent-of-code/2023/day24"
-	"github.com/d34dh0r53/advent-of-code/2023/day25"
 	"github.com/d34dh0r53/advent-of-code/2023/utils"
 )
 
-// Usage: go run main.go <NN>
-// assumes input is in day<NN>/input.txt
 func main() {
 	d := day()
-	fmt.Printf("Running day %02d\n", d)
-
+	fmt.Printf("Running day %d\n", d)
 	switch d {
 	case 1:
-		fmt.Printf("part 1: %d\n", day01.Part1(utils.Readfile(d)))
-		fmt.Printf("part 2: %d\n", day01.Part2(utils.Readfile(d)))
-	case 2:
-		fmt.Printf("part 1: %d\n", day02.Part1(utils.Readfile(d)))
-		fmt.Printf("part 2: %d\n", day02.Part2(utils.Readfile(d)))
-	case 3:
-		fmt.Printf("part 1: %d\n", day03.Part1(utils.Readfile(d)))
-		fmt.Printf("part 2: %d\n", day03.Part2(utils.Readfile(d)))
-	case 4:
-		fmt.Printf("part 1: %d\n", day04.Part1(utils.Readfile(d)))
-		fmt.Printf("part 2: %d\n", day04.Part2(utils.Readfile(d)))
-	case 5:
-		fmt.Printf("part 1: %s\n", day05.Part1(utils.Readfile(d)))
-		fmt.Printf("part 2: %s\n", day05.Part2(utils.Readfile(d)))
-	case 6:
-		fmt.Printf("part 1: %d\n", day06.Part1(utils.Readfile(d)))
-		fmt.Printf("part 2: %d\n", day06.Part2(utils.Readfile(d)))
-	case 7:
-		fmt.Printf("part 1: %d\n", day07.Part1(utils.Readfile(d)))
-		fmt.Printf("part 2: %d\n", day07.Part2(utils.Readfile(d)))
-	case 8:
-		fmt.Printf("part 1: %d\n", day08.Part1(utils.Readfile(d)))
-		fmt.Printf("part 2: %d\n", day08.Part2(utils.Readfile(d)))
-	case 9:
-		fmt.Printf("part 1: %d\n", day09.Part1(utils.Readfile(d)))
-		fmt.Printf("part 2: %d\n", day09.Part2(utils.Readfile(d)))
-	case 10:
-		fmt.Printf("part 1: %d\n", day10.Part1(utils.Readfile(d)))
-		fmt.Printf("part 2:\n%s\n", day10.Part2(utils.Readfile(d)))
-	case 11:
-		fmt.Printf("part 1: %d\n", day11.Part1(utils.Readfile(d)))
-		fmt.Printf("part 2: %d\n", day11.Part2(utils.Readfile(d)))
-	case 12:
-		fmt.Printf("part 1: %d\n", day12.Part1(utils.Readfile(d)))
-		fmt.Printf("part 2: %d\n", day12.Part2(utils.Readfile(d)))
-	case 13:
-		fmt.Printf("part 1: %d\n", day13.Part1(utils.Readfile(d)))
-		fmt.Printf("part 2: %d\n", day13.Part2(utils.Readfile(d)))
-	case 14:
-		fmt.Printf("part 1: %d\n", day14.Part1(utils.Readfile(d)))
-		fmt.Printf("part 2: %d\n", day14.Part2(utils.Readfile(d)))
-	case 15:
-		fmt.Printf("part 1: %d\n", day15.Part1(utils.Readfile(d), 2000000))
-		fmt.Printf("part 2: %d\n", day15.Part2(utils.Readfile(d), 4000000))
-	case 16:
-		fmt.Printf("part 1: %d\n", day16.Part1(utils.Readfile(d)))
-		fmt.Printf("part 2: %d\n", day16.Part2(utils.Readfile(d)))
-	case 17:
-		fmt.Printf("part 1: %d\n", day17.Part1(utils.Readfile(d)))
-		fmt.Printf("part 2: %d\n", day17.Part2(utils.Readfile(d)))
-	case 18:
-		fmt.Printf("part 1: %d\n", day18.Part1(utils.Readfile(d)))
-		fmt.Printf("part 2: %d\n", day18.Part2(utils.Readfile(d)))
-	case 19:
-		fmt.Printf("part 1: %d\n", day19.Part1(utils.Readfile(d)))
-		fmt.Printf("part 2: %d\n", day19.Part2(utils.Readfile(d)))
-	case 20:
-		fmt.Printf("part 1: %d\n", day20.Part1(utils.Readfile(d)))
-		fmt.Printf("part 2: %d\n", day20.Part2(utils.Readfile(d)))
-	case 21:
-		fmt.Printf("part 1: %d\n", day21.Part1(utils.Readfile(d)))
-		fmt.Printf("part 2: %s\n", day21.Part2(utils.Readfile(d)))
-	case 22:
-		fmt.Printf("part 1: %d\n", day22.Part1(utils.Readfile(d)))
-		fmt.Printf("part 2: %d\n", day22.Part2(utils.Readfile(d), false))
-	case 23:
-		fmt.Printf("part 1: %d\n", day23.Part1(utils.Readfile(d)))
-		fmt.Printf("part 2: %d\n", day23.Part2(utils.Readfile(d)))
-	case 24:
-		fmt.Printf("part 1: %d\n", day24.Part1(utils.Readfile(d)))
-		fmt.Printf("part 2: %d\n", day24.Part2(utils.Readfile(d)))
-	case 25:
-		fmt.Printf("part 1: %s\n", day25.Part1(utils.Readfile(d)))
+		fmt.Printf("part 1  %d\n", day01.Part1(utils.Readfile(d)))
 	default:
-		panic(fmt.Errorf("no such day: %d", d))
+		panic(fmt.Errorf("no such day %d", d))
 	}
 }
 
-// Reads day from os.Args.
 func day() int {
 	latest := 25
 	if len(os.Args) == 1 {

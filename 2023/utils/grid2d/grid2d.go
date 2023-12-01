@@ -3,7 +3,7 @@ package grid2d
 import (
 	"strings"
 
-	"github.com/alokmenghrajani/adventofcode2022/utils"
+	"github.com/d34dh0r53/advent-of-code/2023/utils"
 )
 
 type Grid[T any] struct {
