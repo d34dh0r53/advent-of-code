@@ -17,6 +17,7 @@ func main() {
 	switch d {
 	case 1:
 		fmt.Printf("part 1  %d\n", day01.Part1(utils.Readfile(d)))
+		fmt.Printf("part 2  %d\n", day01.Part2(utils.Readfile(d)))
 	default:
 		panic(fmt.Errorf("no such day %d", d))
 	}
