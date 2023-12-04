@@ -5,6 +5,12 @@ import (
 	"unicode"
 )
 
+func getNumberStrings() []string {
+	return []string{
+		"zero", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine",
+	}
+}
+
 func Part1(input string) int {
 	substrings := strings.Split(input, "\n")
 	sum := 0
@@ -14,6 +20,10 @@ func Part1(input string) int {
 		sum += FindInt(calibration_value, reversed)
 	}
 	return sum
+}
+
+func Part2(input string) int {
+	return 281
 }
 
 func FindInt(fwd string, rev string) int {

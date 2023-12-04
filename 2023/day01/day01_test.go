@@ -14,3 +14,17 @@ treb7uchet`)
 		t.Errorf("Part1() = %d, want %d", got, want)
 	}
 }
+
+func TestPart2(t *testing.T) {
+	got := Part2(`two1nine
+eightwothree
+abcone2threexyz
+xtwone3four
+4nineeightseven2
+zoneight234
+7pqrstsixteen`)
+	want := 281
+	if got != want {
+		t.Errorf("Part2() = %d, want %d", got, want)
+	}
+}
